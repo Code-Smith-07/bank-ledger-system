@@ -1,17 +1,18 @@
 """
 BANK LEDGER SYSTEM
-Main entry point demonstrating ledger operations and interactive CLI menu.
+Main entry point (main.py) importing ledger-classe.py and executing ledger operations.
 Author: Vishwateja S B
 """
 
+import importlib
 import sys
-import ledger_classes as lc
-import ledger_utils as lu
+
+lc = importlib.import_module("ledger-classe")
 
 
-def run_demo() -> lc.BankLedger:
+def run_demo():
     """Run a demonstration of the Bank Ledger System with sample accounts and transactions."""
-    lu.print_banner("Welcome to the Bank Ledger System")
+    lc.print_banner("Welcome to the Bank Ledger System")
 
     ledger = lc.BankLedger("Python Class Community Bank")
 
@@ -35,21 +36,21 @@ def run_demo() -> lc.BankLedger:
 
     print(
         f"\nTotal liquidity across {len(ledger.accounts)} accounts: "
-        f"{lu.format_currency(ledger.total_bank_deposits())}"
+        f"{lc.format_currency(ledger.total_bank_deposits())}"
     )
     return ledger
 
 
-def run_interactive(ledger: lc.BankLedger | None = None) -> None:
+def run_interactive(ledger=None) -> None:
     """Run the interactive CLI menu loop for the Bank Ledger System."""
     if ledger is None:
         ledger = lc.BankLedger("Python Class Community Bank")
 
     running = True
     while running:
-        lu.display_menu()
+        lc.display_menu()
         try:
-            choice = lu.get_user_choice()
+            choice = lc.get_user_choice()
             match choice:
                 case 1:
                     acct_num = input("Account number (e.g. ACC-1004): ").strip()

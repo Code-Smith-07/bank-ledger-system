@@ -5,9 +5,8 @@ A modular Python application that models a bank ledger with accounts, deposits, 
 ## Project Structure
 
 - `main.py` — Main entry point that runs a full ledger demonstration (or interactive menu with `--interactive`).
-- `ledger_classes.py` — Core classes: `Transaction`, `BankAccount`, and `BankLedger`.
-- `ledger_utils.py` — Helper functions for currency formatting, banners, and CLI menu handling.
-- `test_ledger.py` — Automated verification tests for account operations and edge cases.
+- `ledger-classe.py` — Core classes (`Transaction`, `BankAccount`, `BankLedger`) and helper functions.
+- `test.py` — Automated verification tests for account operations and edge cases.
 
 ## How to Run
 
@@ -23,5 +22,5 @@ python3 main.py --interactive
 
 Run tests:
 ```bash
-python3 test_ledger.py
+python3 test.py
 ```
