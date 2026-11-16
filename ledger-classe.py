@@ -215,3 +215,4 @@ def get_user_choice() -> int:
     """Prompt the user for a menu selection and return it as an integer."""
     raw = input("Select an option (1-8): ").strip()
     return int(raw)
+

@@ -51,3 +51,4 @@ def test_bank_ledger() -> None:
 
 if __name__ == "__main__":
     test_bank_ledger()
+
